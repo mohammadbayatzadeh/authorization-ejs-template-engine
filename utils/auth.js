@@ -4,10 +4,7 @@ const checkEmail = (email) => {
   const result = email.match(
     /^[a-z+][a-z0-9\.\-]{4,15}@[a-z]{3,10}\.[a-z]{3,10}/gim
   );
-  if (result) {
-    return true;
-  }
-  throw { status: 400, message: "email invalid" };
+  return result ? true : false;
 };
 
 const hashPassword = (password) => {

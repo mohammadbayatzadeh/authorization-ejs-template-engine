@@ -164,8 +164,8 @@ body {
 .social-login,
 .social-login a {
   position: absolute;
-  height: 140px;
   width: 160px;
+  margin-bottom: 60px;
   text-align: center;
   bottom: 0px;
   right: 0px;

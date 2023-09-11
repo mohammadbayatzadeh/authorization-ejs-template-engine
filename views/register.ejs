@@ -11,9 +11,9 @@
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
-			<form class="login">
-				<p><%- messages?.error ?? "" %></p>
+			<form class="login" action="/register" method="POST">
 				<h3>Register Form</h3>
+				<p><%- messages?.error ?? "" %></p>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
 					<input type="text" class="login__input"name="firstname" placeholder="First Name">
@@ -24,13 +24,13 @@
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input"name="emial" placeholder="Email">
+					<input type="text" class="login__input"name="email" placeholder="Email">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-lock"></i>
 					<input type="password" class="login__input"name="password" placeholder="Password">
 				</div>
-				<button class="button login__submit">
+				<button class="button login__submit" type="submit">
 					<span class="button__text">Register Now</span>
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				
