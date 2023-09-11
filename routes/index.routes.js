@@ -2,17 +2,21 @@ const { Router } = require("express");
 const router = Router();
 
 router.get("/login", (req, res) => {
-  res.render("layout/main", {
-    title:"login",
-    body:'/login'
+  res.render("login", {
+    title: "Login Page",
   });
 });
 
 router.get("/register", (req, res) => {
-  res.render("register");
+  res.render("register", {
+    title: "Register Page",
+  });
 });
+
 router.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {
+    title: "Home Page",
+  });
 });
 module.exports = {
   allRouters: router,
