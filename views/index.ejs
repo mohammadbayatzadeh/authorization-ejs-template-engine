@@ -2,6 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <title>Login form</title>
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'><link rel="stylesheet" href="./styles/style.css">
 
@@ -11,24 +12,23 @@
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
-			<form class="login">
-				<h3>LogIn Form</h3>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Email">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-lock"></i>
-					<input type="password" class="login__input" placeholder="Password">
-				</div>
-				<button class="button login__submit">
-					<span class="button__text">Log In Now</span>
-					<i class="button__icon fas fa-chevron-right"></i>
-				</button>				
-			</form>
-			<div class="social-login">
-				<a href="/register">register</a>
-			</div>
+            <div class="index_container">
+                <a class="button login__submit" href="/login">
+                    Log In 
+                    <i class="button__icon fas fa-chevron-right"></i>
+                </a>
+
+            
+                <a class="button login__submit  " href="/register">
+                        Register
+                        <i class="button__icon fas fa-chevron-right"></i>
+                </a>
+                <a class="button login__submit  " href="/profile">
+                        Profile
+                        <i class="button__icon fas fa-chevron-right"></i>
+                </a>    
+            </div>
+                
 		</div>
 		<div class="screen__background">
 			<span class="screen__background__shape screen__background__shape4"></span>
