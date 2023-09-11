@@ -92,6 +92,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+.login .error {
+  font-size: .8em;
+  color: rgb(194, 66, 66);
+}
 .index_container {
   width: 320px;
   padding: 20px;
