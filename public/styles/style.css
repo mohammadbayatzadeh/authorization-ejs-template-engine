@@ -152,9 +152,11 @@ body {
   transition: 0.2s;
 }
 
+
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
+  transform: translateX(5px);
   border-color: #6a679e;
   outline: none;
 }
