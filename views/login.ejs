@@ -2,8 +2,8 @@
 	<div class="screen">
 		<div class="screen__content">
 			<form class="login">
-				<p><%= messages?.error ?? "" %></p>
 				<h3>LogIn Form</h3>
+				<p class="error"><%= messages?.error ?? "" %></p>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
 					<input type="text" class="login__input" placeholder="Email">
