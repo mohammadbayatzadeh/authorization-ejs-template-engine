@@ -1,8 +1,5 @@
 const { Router } = require("express");
-const {
-  registerController,
-  loginController,
-} = require("../controllers/auth.contollers");
+const { registerController } = require("../controllers/auth.contollers");
 const {
   checkIfIsAuth,
   checkAuthenticated,
@@ -22,9 +19,12 @@ function initRoutes(passport) {
       title: "Register Page",
     });
   });
+
   router.get("/profile", checkAuthenticated, (req, res) => {
+    const user = req.user;
     res.render("profile", {
       title: "profile Page",
+      user,
     });
   });
 
@@ -34,11 +34,19 @@ function initRoutes(passport) {
     });
   });
 
+  router.get("/logout", (req, res) => {
+    req.logOut({ keepSessionInfo: false }, (err) => {
+      if (err) console.log(err);
+    });
+    res.redirect("/");
+  });
+
   router.post("/register", checkIfIsAuth, registerController);
+
   router.post(
     "/login",
     checkIfIsAuth,
-    passport.authenticate({
+    passport.authenticate("local", {
       successRedirect: "/profile",
       failureRedirect: "/login",
       successFlash: true,

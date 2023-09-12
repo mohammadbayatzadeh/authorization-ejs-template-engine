@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<div class="index_container">
+				<h3>Profile</h3>
+				<p class="error">  <%= messages?.error ?? "" %></p>
+				<button class="button login__submit">
+                    <%-user._id %>
+				</button>
+                <button class="button login__submit">
+                    <%-user.firstName %>
+				</button>
+                <button class="button login__submit">
+					<%-user.lastName %>
+				</button>
+                <button class="button login__submit">
+					<%-user.email%>
+				</button>
+                <button class="button login__submit">
+                    <%-user.password.slice(0, 20) + '...'%>
+				</button>
+							
+			</div>
+			<div class="social-login">
+				<a href="/">home</a>
+                <a href="/logout">log out</a>
+			</div>
+          
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>

@@ -93,14 +93,15 @@ body {
   flex-direction: column;
 }
 .login .error {
-  font-size: .8em;
+  font-size: 0.8em;
   color: rgb(194, 66, 66);
 }
 .index_container {
   width: 320px;
   padding: 20px;
 }
-.index_container a {
+.index_container a,
+.index_container button {
   margin-bottom: 15px;
   text-decoration: none;
 }
@@ -152,7 +153,6 @@ body {
   transition: 0.2s;
 }
 
-
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
@@ -167,14 +167,17 @@ body {
   color: #7875b5;
 }
 
-.social-login,
-.social-login a {
+.social-login {
   position: absolute;
-  width: 160px;
-  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  width: 160px;
+  margin-bottom: 150px;
   bottom: 0px;
   right: 0px;
+}
+.social-login a {
   color: #fff;
   font-size: 24px;
   text-decoration: none;

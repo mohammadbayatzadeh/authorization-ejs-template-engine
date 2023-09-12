@@ -8,11 +8,11 @@ const passportInit = async (passport) => {
     try {
       await connectDB();
       const user = await User.findOne({ email });
-      if (!user) done(null, false, { messa: "user not found!" });
+      if (!user) return done(null, false, { message: "user not found!" });
 
       const verifyPass = comparePassword(password, user.password);
       if (!verifyPass)
-        done(null, false, { messa: "email or password is incorect!" });
+       return done(null, false, { message: "email or password is incorect!" });
       done(null, user);
     } catch (error) {
       done(error);
@@ -32,7 +32,7 @@ const passportInit = async (passport) => {
   const deserializeUser = passport.deserializeUser(async (id, done) => {
     await connectDB();
     const user = await User.findById(id);
-    if (!user) done(null, false, { messa: "user not found!" });
+    if (!user) done(null, false, { message: "user not found!" });
 
     return done(null, user);
   });

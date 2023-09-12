@@ -43,11 +43,7 @@ const registerController = async (req, res, next) => {
     next(err);
   }
 };
-const loginController = async (req,res,next) =>{
-
-}
 
 module.exports = {
   registerController,
-  loginController
 };
