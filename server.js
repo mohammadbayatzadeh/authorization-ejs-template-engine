@@ -1,14 +1,18 @@
 const express = require("express");
-var expressLayouts = require("express-ejs-layouts");
+const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 const flash = require("express-flash");
 const { errorHandler, notFoundHandler } = require("./utils/errroHandling");
-const { allRouters } = require("./routes/index.routes");
+
+//passport
+const passport = require("passport");
+const { passportInit } = require("./passport.config");
 
 const app = express();
 
 //enviroment variables
 const dotenv = require("dotenv");
+const initRoutes = require("./routes/index.routes");
 dotenv.config();
 
 //middlewares
@@ -31,9 +35,13 @@ app.use(
   })
 );
 
-//routes
-app.use(allRouters);
+//set up passport
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
+//routes
+app.use(initRoutes(passport));
 
 //error handling
 app.use(notFoundHandler);
